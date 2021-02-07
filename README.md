@@ -16,6 +16,8 @@ Requirements
 
 ## Hyperparameters
 - Multi-head `h`
+- District-business embedding dimension `e`
+
 - learning rate `lr`
 - weight decay `weight_decay`
 - batch size `batch_size`
