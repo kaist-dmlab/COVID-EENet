@@ -16,10 +16,10 @@ Requirements
 - Run "python train.py" to train COVID-EENet
 
 ## Hyperparameters
-- learning rate : lr = 0.001
-- weight decay :  weight_decay = 0.96
-- batch size : batch_size = 50
-- multi-head : h = 4
+- Multi-head `h`
+- learning rate `lr`
+- weight decay `weight_decay`
+- batch size `batch_size`
 
 You can adjust the hyperparameters of COVID-EENet in Config.py
 
