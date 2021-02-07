@@ -15,12 +15,12 @@ Requirements
 - Run "python train.py" to train COVID-EENet
 
 ## Hyperparameters
-- Multi-head `h`
-- District-business embedding dimension `e`
+- `h` : # of multi-head
+- `e` : District-business embedding dimension 
 
-- learning rate `lr`
-- weight decay `weight_decay`
-- batch size `batch_size`
+- `lr` : learning rate 
+- `weight_decay`: weight decay of learning rate scheduler
+- `batch_size` : batch size 
 
 You can adjust the hyperparameters of COVID-EENet in Config.py
 
