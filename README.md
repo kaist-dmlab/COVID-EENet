@@ -15,7 +15,7 @@ Requirements
 - Run "python train.py" to train COVID-EENet
 
 ## Hyperparameters
-- `h` : # of multi-head, e.g, h = 4
+- `h` : # multi-head, e.g, h = 4
 - `e` : District-business embedding dimension, e.g., e = 20
 
 - `lr` : learning rate, e.g., lr = 0.001 
