@@ -26,7 +26,8 @@ Requirements
 
 - `lr` : learning rate, e.g., lr = 0.001 
 - `weight_decay`: weight decay of learning rate scheduler, e.g., weight_decay = 0.96
-- `batch_size` : batch size, e.g., batch_size = 50 
+- `batch_size` : batch size, e.g., batch_size = 50
+
 You can adjust the hyperparameters of COVID-EENet in Config.py
 
 
