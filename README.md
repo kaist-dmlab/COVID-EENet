@@ -12,7 +12,9 @@ Requirements
 - TensorFlow-gpu >= 2.3.0
 
 ## Usage
-- Run "python train.py" to train COVID-EENet
+- Go to `src` folder.
+- Adjust `Config.py` by referring to the description of hyperparameters below.
+- Run `python train.py` to train COVID-EENet.
 
 ## Hyperparameters
 - `w` : prediction period, e.g., w = 14 or 28
