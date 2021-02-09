@@ -1,5 +1,5 @@
 # COVID-EENet
-COVID-EENet: Predicting Fine-Grained Impact of COVID-19 onLocal Economies
+COVID-EENet: Predicting Fine-Grained Impact of COVID-19 on Local Economies
 
 ## About
 - Source code and datasets of the paper COVID-EENet: Predicting Fine-Grained Impact of COVID-19 onLocal Economies.
