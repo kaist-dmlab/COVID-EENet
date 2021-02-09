@@ -20,7 +20,7 @@ Requirements
 - `w` : prediction period, e.g., w = 14 or 28
 
 - `h` : # multi-head, e.g, h = 4
-- `e` : District-business embedding dimension, e.g., e = 20
+- `e` : dimensionaligy of district-business embedding, e.g., e = 20
 - `seq2seq_lstm_cell` : hidden size of LSTM, e.g., seq2seq_lstm_cell = 16
 - `geographyViewFCN`  : hidden unit of FCN in Geography-View Sub-Encoder, e.g., geographyViewFCN = 1
 - `epidemicViewFCN`   : hidden unit of FCN in Epidemic-View Sub-Encoder, e.g., epidemicViewFCN = 1
