@@ -3,7 +3,7 @@ COVID-EENet: Predicting Fine-Grained Impact of COVID-19 on Local Economies
 
 ## About
 - Source code and datasets of the paper COVID-EENet: Predicting Fine-Grained Impact of COVID-19 onLocal Economies.
-- Since the data from BCCard is not open to public, we only provide datasets except BCCard datasets.
+- Since **dataset from BCCard is not open to public**, we only provide datasets except BCCard datasets.
 
 ## Installation
 Requirements
