@@ -12,7 +12,7 @@ Requirements
 - TensorFlow-gpu >= 2.3.0
 
 ## Usage
-- Create `tmp\checkpoint` and `img` folder.
+- Create `tmp\checkpoint` folder.
 - Go to `src` folder.
 - Adjust `Config.py` by referring to the description of hyperparameters below.
 - Run `python train.py` to train COVID-EENet in `src` folder.
