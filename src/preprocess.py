@@ -7,7 +7,8 @@
 #%%
 import pandas as pd
 import numpy as np
-import os, sys, pickle
+import os, pickle
+
 #%%
 tp_grp_nm_dict = {"유흥주점(음식)":"휴게","단란주점(음식)":"휴게"}
 def SaleDistForCity(data, sales = 'CNT', total=False):
