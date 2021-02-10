@@ -35,7 +35,7 @@ class Config():
         fname_BusinessStructure_cnt = "BusinessStructure_CNT.pkl",                  # Real Data is Not available
         fname_CustomerStructure = "*CustomerStructure_{}.pkl",                      # Real Data is Not available
         fname_contextual_distance = "contextual_distance_matrix.pkl",               # Real Data is Not available
-        fname_physical_distance = "physical_distance.pkl",                          # Real Data is Not available
+        fname_physical_distance = "physical_distance.pkl",                          
         
         fname_covid_metainfo = "seoul_mass_infection_metainfo.pkl",
         fname_covid_daily = "daily_seoul_mass_infection.pkl",
