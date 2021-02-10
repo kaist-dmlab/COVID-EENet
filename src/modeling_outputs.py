@@ -74,11 +74,9 @@ class COVIDNetOutputs(ModelOutput):
 class MainOutputs(ModelOutput):
     """Class for keeping track of an item in inventory."""
     ComponentOutputs : List[tf.Tensor] = None           # # of mass infection
-    EPR : tf.Tensor = None              # # of mass infection
     MARAttnWeight : tf.Tensor = None    # event attention
     MAR : tf.Tensor = None           # composite_outputs /dot event-attention
     WeekEmb : tf.Tensor = None                          # Weekday Embedding
     MARWeekEmb : tf.Tensor = None    # shortterminsensitivity + weekEmb
     MARWeekEmbFCN : tf.Tensor = None # FCN(shortterminsensitivityWeekEmb)
     CovidImpact : tf.Tensor = None                      
-# %%
