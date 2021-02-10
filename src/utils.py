@@ -9,23 +9,9 @@ import datetime
 import numpy as np
 import pandas as pd
 import tensorflow as tf
-import tensorflow.keras.layers
 import pickle, glob, os
-from dateutil.relativedelta import relativedelta
 import warnings
 warnings.filterwarnings(action='ignore')
-
-from Config import Config
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
-import matplotlib as mpl
-plt.rcParams["font.family"] = "nanummyeongjo"
-plt.rcParams["axes.unicode_minus"] = False
-plt.rcParams["font.size"] = 12.
-plt.rcParams["xtick.labelsize"] = 12.
-plt.rcParams["ytick.labelsize"] = 12.
-plt.rcParams["axes.labelsize"] = 12.
-
 
 def interpolation_na(row, duration, threshold):
     sparsity = row[:duration].isna().sum() / len(row[:duration])
