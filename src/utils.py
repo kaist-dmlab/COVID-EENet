@@ -136,8 +136,6 @@ class Dataloader(object):
         self.data_dir = config.data_dir
         self.fname_BusinessStructure_amt = config.fname_BusinessStructure_amt
         self.fname_BusinessStructure_cnt = config.fname_BusinessStructure_cnt
-        self.fname_BusinessStructure_shop_cnt = config.fname_BusinessStructure_shop_cnt
-        self.fname_BusinessStructure_shop_norm = config.fname_BusinessStructure_shop_norm
         self.fname_CustomerStructure = config.fname_CustomerStructure
         self.fname_contextual_distance = config.fname_contextual_distance
         self.fname_physical_distance = config.fname_physical_distance
@@ -162,8 +160,6 @@ class Dataloader(object):
         # dataframe
         self._BusinessStructure_amt = pickle.load(open(os.path.join(self.data_dir, self.fname_BusinessStructure_amt),"rb"))
         self._BusinessStructure_cnt = pickle.load(open(os.path.join(self.data_dir, self.fname_BusinessStructure_cnt),"rb"))
-        self._BusinessStructure_shop_cnt = pickle.load(open(os.path.join(self.data_dir, self.fname_BusinessStructure_shop_cnt),"rb"))
-        self._BusinessStructure_shop_norm = pickle.load(open(os.path.join(self.data_dir, self.fname_BusinessStructure_shop_norm),"rb"))
 
         # numpy
         # self._CustomerStructure = pickle.load(open(os.path.join(self.data_dir, "majorIndustry_cust_{}.pkl".format(self.sales)),"rb"))
@@ -307,12 +303,6 @@ class Dataloader(object):
         self.scaler_BusinessStructure_cnt = Scaler()
         self._BusinessStructure_cnt_scaled = self.scaler_BusinessStructure_cnt.fit_transform(self._BusinessStructure_cnt) # pd.DataFrame
         
-        self.scaler_BusinessStructure_shop_cnt = Scaler()
-        self._BusinessStructure_shop_cnt_scaled = self.scaler_BusinessStructure_shop_cnt.fit_transform(self._BusinessStructure_shop_cnt) # pd.DataFrame
-        
-        self.scaler_BusinessStructure_shop_norm = Scaler()
-        self._BusinessStructure_shop_norm_scaled = self.scaler_BusinessStructure_shop_norm.fit_transform(self._BusinessStructure_shop_norm) # pd.DataFrame
-        
         self.scaler_CustomerStructure_amt = Scaler()
         self._CustomerStructure_amt_scaled = self.scaler_CustomerStructure_amt.fit_transform(self._CustomerStructure_amt) # dict
         
@@ -398,8 +388,6 @@ class Dataloader(object):
         majorindustry_target = np.stack([
                                         self._BusinessStructure_amt_scaled.loc[index_target].values,
                                         self._BusinessStructure_cnt_scaled.loc[index_target].values,
-                                        self._BusinessStructure_shop_cnt_scaled.loc[index_target].values,
-                                        self._BusinessStructure_shop_norm_scaled.loc[index_target].values,
                                         ], axis = -1)
         ######################################################
         # Customer structure Dataset (2)
@@ -479,8 +467,6 @@ class Dataloader(object):
             city = index_infected.loc[i, "City"]
             majorindustry_infected.append(np.stack([self._BusinessStructure_amt_scaled.loc[city].values,
                                                     self._BusinessStructure_cnt_scaled.loc[city].values,
-                                                    self._BusinessStructure_shop_cnt_scaled.loc[city].values,
-                                                    self._BusinessStructure_shop_norm_scaled.loc[city].values,
                                                     ], axis = -1)
             )
             custdist_infected.append(np.stack([self._CustomerStructure_amt_scaled[city].values,
