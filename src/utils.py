@@ -632,39 +632,3 @@ def loadData(config, dataloader, existing = True) :
                     open(config.datapath, "wb"))
     print("X shape {}, y shape {}, lossMask shape {} ".format(datasets[0].shape, datasets[1].shape, datasets[2].shape))
     return datasets
-# %%
-def draw_figure(config, epoch, y_true, y_pred, lossMask, metainfo):
-    length = metainfo.shape[0]
-    for i, city in enumerate(metainfo[:,0]):
-        if (city == "강남구") | (city == "종로구") | (city == "양천구") | (city == "구로구"):
-            fig, axs = plt.subplots(7, 5, figsize = (20,20), sharex = "all")
-            fig.suptitle("{} - {} ~ {} Sale changes".format(city, metainfo[i,1].strftime("%Y-%m-%d"), metainfo[i,2].strftime("%Y-%m-%d")))
-            y_true_city = y_true[i::length, :, :]    
-            y_pred_city = y_pred[i::length, :, :]
-            lossMask_city = lossMask[i::length, :]
-
-            if len(y_true_city.shape) == 3:
-                y_true_city = y_true_city[0,:,:]
-                y_pred_city = y_pred_city[0,:,:]
-                lossMask_city = lossMask_city[0,:]
-            x, y = 0, 0
-            buz_dict = config.buz_dict
-            for buz in config.buz_dict.keys():
-                idx = buz_dict[buz]
-                Not_Masked = lossMask_city[idx]
-                axs[x, y].plot(y_true_city[idx,:], label = "y_true")
-                axs[x, y].plot(y_pred_city[idx,:], label = "y_true")
-                rmse = (((y_true_city[idx,:] - y_pred_city[idx,:])**2).mean())**0.5
-                axs[x, y].set_title("{} - {} - rmse: {:03f}".format(str(Not_Masked),buz, rmse))
-                y += 1
-                if y >= 5:
-                    y = 0
-                    x += 1
-            fname = "{}_{}_{}_test.png".format(city, config.datetime, str(epoch))
-            fname = os.path.join(config.checkpoint_figurespath, config.checkpoint_figures) + fname
-            fig.tight_layout()
-            fig.savefig(fname)
-    #         plt.show()
-            print("Save prediction figure at {}".format(fname), end="")
-        else :
-            continue
