@@ -7,11 +7,12 @@
 class Config():
     def __init__(
         self,
-        ## datetime ##
+
         datetime = "20210421",
+        name = "COVID_EENet_RUN_TEST4",
 
         ## model parameters##
-        w = 28,                             # prediction period 
+        w = 14,                             # prediction period 
         h = 4,                              # multi-head
         e = 20,                             # embedding dimension
         
@@ -19,7 +20,6 @@ class Config():
         epidemicViewFCN = 1,
         geographyViewFCN = 1,
         # macroscopicAggFCN
-        macroscopicAggAttnDim = 5,
         activation = 'tanh',
 
         ## train parameters##
@@ -31,13 +31,13 @@ class Config():
 
         ## Input file ##
         data_dir = "../data/",
-        fname_BusinessStructure_amt = "BusinessStructure_AMT.pkl",                  # Not available
-        fname_BusinessStructure_cnt = "BusinessStructure_CNT.pkl",                  # Not available
-        fname_BusinessStructure_shop_cnt = "BusinessStructure_numOfShopCNT.pkl",    # Not available
-        fname_BusinessStructure_shop_norm = "BusinessStructure_numOfShopNORM.pkl",  # Not available
-        fname_CustomerStructure = "*CustomerStructure_{}.pkl",                      # Not available
-        fname_contextual_distance = "contextual_distance_matrix.pkl",               # Not available
-        fname_physical_distance = "physical_distance.pkl",                          # Not available
+        fname_BusinessStructure_amt = "BusinessStructure_AMT.pkl",                  # Real Data is Not available
+        fname_BusinessStructure_cnt = "BusinessStructure_CNT.pkl",                  # Real Data is Not available
+        fname_BusinessStructure_shop_cnt = "BusinessStructure_numOfShopCNT.pkl",    # Real Data is Not available
+        fname_BusinessStructure_shop_norm = "BusinessStructure_numOfShopNORM.pkl",  # Real Data is Not available
+        fname_CustomerStructure = "*CustomerStructure_{}.pkl",                      # Real Data is Not available
+        fname_contextual_distance = "contextual_distance_matrix.pkl",               # Real Data is Not available
+        fname_physical_distance = "physical_distance.pkl",                          # Real Data is Not available
         
         fname_covid_metainfo = "seoul_mass_infection_metainfo.pkl",
         fname_covid_daily = "daily_seoul_mass_infection.pkl",
@@ -45,8 +45,8 @@ class Config():
         fname_covid_re_cum = "recent_cumulative_seoul_mass_infection.pkl",
         fname_elapsed_day = "covid_elapsed_day.pkl",
         
-        fname_Sales2020 = "*Sales2020_AMT.pkl",                                     # Not available
-        fname_Sales2019 = "{}_Sales2019_AMT.pkl",                                   # Not available
+        fname_Sales2020 = "*Sales2020_AMT.pkl",                                     # Real Data is Not available
+        fname_Sales2019 = "{}_Sales2019_AMT.pkl",                                   # Real Data is Not available
 
         ## Utility ##
         start_month = 2,                     # train start month
@@ -65,16 +65,12 @@ class Config():
         r = 25,                             # number of regions in Seoul, FIXED
         
         ## Save File List ##
-        name = "COVID_EENet_RUN_TEST",
         datapath = "../data/dataset_{}_{}.pkl",
         log_filepath = '../log',
         log_name = "training_{}_{}_{}.log",
         checkpoint_filepath = '../tmp/checkpoint/{}',
         checkpoint_model = 'training_checkpoint_{}_{}_{}',
-        checkpoint_state = 'training_checkpoint_state_{}_{}_{}',
         checkpoint_outputs = "training_checkpoint_outputs_{}_{}_{}",
-        checkpoint_figures = "training_checkpoint_figures_{}_{}_{}",
-        checkpoint_figurespath = '../img/{}',
         
         ## ablation ##
         ablation_economicView = True,
@@ -84,6 +80,7 @@ class Config():
 
         ## datetime ##
         self.datetime = datetime
+        self.name = name
 
         ## model parameters##
         self.w = w
@@ -93,8 +90,7 @@ class Config():
         self.seq2seq_lstm_cell = seq2seq_lstm_cell
         self.epidemicViewFCN = epidemicViewFCN
         self.geographyViewFCN = geographyViewFCN
-        self.macroscopicAggFCN = w # SHOULD BE SAME WITH 
-        self.macroscopicAggAttnDim = macroscopicAggAttnDim # 5
+        self.macroscopicAggFCN = w # SHOULD BE SAME WITH w
         self.activation = activation
 
         ## train parameters##
@@ -131,16 +127,12 @@ class Config():
         self.r = r
 
         ## Save File List ##
-        self.name = name
         self.datapath = datapath.format(self.w, "2020-12-29")
         self.log_filepath = log_filepath
         self.log_name = log_name.format(self.datetime, self.w, self.name)
         self.checkpoint_filepath = checkpoint_filepath.format(self.name)
         self.checkpoint_model = checkpoint_model.format(self.datetime, self.w, self.name)
-        self.checkpoint_state = checkpoint_state.format(self.datetime, self.w, self.name)
         self.checkpoint_outputs = checkpoint_outputs.format(self.datetime, self.w, self.name)
-        self.checkpoint_figurespath = checkpoint_figurespath.format(self.name)
-        self.checkpoint_figures = checkpoint_figures.format(self.datetime, self.w, self.name)
         
         ## ablation ##
         self.ablation_economicView = ablation_economicView
