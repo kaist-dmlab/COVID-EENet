@@ -9,15 +9,14 @@ import tensorflow as tf
 import numpy as np
 import os, logging, pickle, datetime
 from datetime import date
-import matplotlib.pyplot as plt
 
 from utils import Dataloader, loadData, split_data
 from models import COVIDEENet
 from Config import Config
 config = Config()
-tf.keras.backend.set_floatx('float32')
 
 #%%
+tf.keras.backend.set_floatx('float32')
 print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
 gpus = tf.config.experimental.list_physical_devices('GPU')
 if gpus:
