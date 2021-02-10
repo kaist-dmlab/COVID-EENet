@@ -33,8 +33,6 @@ class Config():
         data_dir = "../data/",
         fname_BusinessStructure_amt = "BusinessStructure_AMT.pkl",                  # Real Data is Not available
         fname_BusinessStructure_cnt = "BusinessStructure_CNT.pkl",                  # Real Data is Not available
-        fname_BusinessStructure_shop_cnt = "BusinessStructure_numOfShopCNT.pkl",    # Real Data is Not available
-        fname_BusinessStructure_shop_norm = "BusinessStructure_numOfShopNORM.pkl",  # Real Data is Not available
         fname_CustomerStructure = "*CustomerStructure_{}.pkl",                      # Real Data is Not available
         fname_contextual_distance = "contextual_distance_matrix.pkl",               # Real Data is Not available
         fname_physical_distance = "physical_distance.pkl",                          # Real Data is Not available
@@ -104,8 +102,6 @@ class Config():
         self.data_dir = data_dir
         self.fname_BusinessStructure_amt = fname_BusinessStructure_amt
         self.fname_BusinessStructure_cnt = fname_BusinessStructure_cnt
-        self.fname_BusinessStructure_shop_cnt = fname_BusinessStructure_shop_cnt
-        self.fname_BusinessStructure_shop_norm = fname_BusinessStructure_shop_norm
         self.fname_CustomerStructure = fname_CustomerStructure
         self.fname_contextual_distance = fname_contextual_distance
         self.fname_physical_distance = fname_physical_distance
