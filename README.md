@@ -1,8 +1,8 @@
 # COVID-EENet
-COVID-EENet: Predicting Fine-Grained Impact of COVID-19 on Local Economies
+COVID-EENet: Predicting Fine-Grained Impact of COVID-19 on Local Economies (AAAI-22)
 
 ## About
-- Source code and datasets of the paper COVID-EENet: Predicting Fine-Grained Impact of COVID-19 onLocal Economies, AAAI 2022.
+- Source code and datasets of the paper COVID-EENet: Predicting Fine-Grained Impact of COVID-19 on Local Economies.
 - Since **dataset from BCCard is not open to public**, we only provide epidemic-view feature and the physical distance dataset of geography-view feature.
 
 
